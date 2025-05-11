@@ -10,7 +10,9 @@ import com.example.hexagonalarchitecture.user.domain.model.UserFactory;
 
 import java.util.Optional;
 
-public class UserUseCaseService implements ICreateUserUseCase, IGetUserUseCase {
+public class UserUseCaseService implements
+        ICreateUserUseCase,
+        IGetUserUseCase {
     private final IUserOutputPort userOutputPort;
     private final UserFactory userFactory;
 
