@@ -25,15 +25,4 @@ public class UserEntity {
     public UserEntity() {}
 
     public UserEntity(Long id, String name, String password) {}
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public String getPassword() {
-        return password;
-    }
 }
