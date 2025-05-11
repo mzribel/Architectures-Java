@@ -1,8 +1,6 @@
 package com.example.hexagonalarchitecture.user.adapter.out.persistence;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +10,8 @@ import java.time.LocalDateTime;
 @Getter
 public class UserEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(nullable = false, unique = true)
     private String name;
 
@@ -23,6 +23,13 @@ public class UserEntity {
         this.password = password;
     }
     public UserEntity() {}
+
+    public UserEntity(Long id, String name, String password) {
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     public String getName() {
         return name;

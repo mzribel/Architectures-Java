@@ -4,7 +4,6 @@ import com.example.hexagonalarchitecture.user.adapter.out.persistence.IUserRepos
 import com.example.hexagonalarchitecture.user.adapter.out.persistence.UserPersistenceAdapter;
 import com.example.hexagonalarchitecture.user.application.port.out.IUserOutputPort;
 import com.example.hexagonalarchitecture.user.application.service.UserUseCaseService;
-import com.example.hexagonalarchitecture.user.domain.model.IUserFactory;
 import com.example.hexagonalarchitecture.user.domain.model.UserFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,14 +18,13 @@ public class ApplicationConfig {
         return new UserPersistenceAdapter(userRepository);
     }
 
-
     @Bean
-    public IUserFactory userFactory() {
+    public UserFactory userFactory() {
         return new UserFactory();
     }
 
     @Bean
-    public UserUseCaseService userUseCaseService(IUserOutputPort userOutputPort, IUserFactory userFactory) {
+    public UserUseCaseService userUseCaseService(IUserOutputPort userOutputPort, UserFactory userFactory) {
         return new UserUseCaseService(userOutputPort, userFactory);
     }
 }

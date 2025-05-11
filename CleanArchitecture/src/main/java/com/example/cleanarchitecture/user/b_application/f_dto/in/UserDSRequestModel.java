@@ -8,8 +8,10 @@ public class UserDSRequestModel {
     LocalDateTime created_at;
     String name;
     String password;
-    public String getName() { return name; };
-    public String getPassword() { return password; };
+    public String getName() { return name; }
+
+    public String getPassword() { return password; }
+
     public UserDSRequestModel(String name, String password, LocalDateTime created_at) {
         this.name = name;
         this.password = password;

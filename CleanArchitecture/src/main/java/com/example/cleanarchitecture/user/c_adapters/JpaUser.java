@@ -13,7 +13,7 @@ public class JpaUser implements IUserRegisterDSGateway {
 
     @Override
     public boolean existsByName(String name) {
-        return userRepository.existsById(name);
+        return userRepository.existsByName(name);
     }
 
     @Override

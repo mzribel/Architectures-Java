@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IUserRepository extends JpaRepository<UserEntity, String> {
     UserEntity getFirstByName(String name);
+
+    boolean existsByName(String name);
 }
